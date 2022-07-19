@@ -29,6 +29,18 @@ public class Markup
 		return markup;
 	}
 
+	public static InlineKeyboardMarkup showLists(String listTitle)
+	{
+		InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
+		List<List<InlineKeyboardButton>> rows = new ArrayList<>();
+		List<InlineKeyboardButton> row1 = new ArrayList<>();
+		row1.add(Button.showList(listTitle));
+		row1.add(Button.allLists());
+		rows.add(row1);
+		markup.setKeyboard(rows);
+		return markup;
+	}
+
 	/**
 	 * This markup is used when the user added a new item.
 	 *

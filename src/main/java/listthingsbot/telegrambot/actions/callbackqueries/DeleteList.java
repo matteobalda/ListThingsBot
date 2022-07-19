@@ -26,7 +26,8 @@ public class DeleteList extends CallbackQuery
 		chat.listUser.removeList(chat.lastListTitle);
 		EditMessageText message = new EditMessageText();
 		message.setMessageId(telegramCallbackQuery.getMessage().getMessageId());
-		message.setText("\uD83D\uDDD1️ List <b>" + chat.lastListTitle + "</b> deleted");
+		message.setText("\uD83D\uDDD1️ List <b>" + chat.lastListTitle + "</b> deleted\n" +
+				"Type /help to see the available commands");
 		chat.editMessage(message);
 	}
 }

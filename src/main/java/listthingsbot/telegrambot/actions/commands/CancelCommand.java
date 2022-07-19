@@ -21,6 +21,7 @@ public class CancelCommand extends Command
 	public void execute()
 	{
 		chat.status = ChatStatus.DEFAULT;
-		chat.sendMessage("Previous actions ignored");
+		chat.sendMessage("Previous actions ignored\n" +
+				"Type /help to see the available commands");
 	}
 }

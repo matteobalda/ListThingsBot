@@ -112,7 +112,7 @@ public class Chat implements Serializable
 		if(listUser.getList(oldTitle) != null)
 		{
 			listUser.renameList(oldTitle, newTitle);
-			sendMessage("List <b>" + oldTitle + "</b> renamed to <b>" + newTitle + "</b>", Markup.showList(newTitle));
+			sendMessage("List <b>" + oldTitle + "</b> renamed to <b>" + newTitle + "</b>", Markup.showLists(newTitle));
 		}
 		else
 			sendMessage("⚠️ List " + oldTitle + " <b>not found</b> \uD83D\uDE41");

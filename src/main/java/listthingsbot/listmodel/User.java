@@ -44,6 +44,7 @@ public class User implements Serializable
 	{
 		if(getList(title) == null)
 			lists.put(title, new List(title));
+		else throw new IllegalArgumentException("List already exist");
 	}
 
 	/**
@@ -56,6 +57,7 @@ public class User implements Serializable
 	{
 		if(getList(title) == null)
 			lists.put(title, new List(title, listToCopy));
+		else throw new IllegalArgumentException("List already exist");
 	}
 
 	/**
@@ -67,6 +69,7 @@ public class User implements Serializable
 	{
 		if(getList(title) != null)
 			lists.remove(title);
+		else throw new IllegalArgumentException("List doesn't exist");
 	}
 
 	/**
@@ -90,6 +93,7 @@ public class User implements Serializable
 	 */
 	public void renameList(String oldTitle, String newTitle)
 	{
+		if(this.getList(oldTitle) == null) throw new IllegalArgumentException("List doesn't exist");
 		newList(newTitle, getList(oldTitle));
 		removeList(oldTitle);
 	}

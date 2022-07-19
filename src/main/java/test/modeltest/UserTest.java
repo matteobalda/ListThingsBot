@@ -29,16 +29,18 @@ public class UserTest
     }
 
     @Test
-    public void testKO_listAlreadyExist() {
+    public void testKO_listAlreadyExist()
+    {
         User user = new User("123");
         user.newList("list1");
         assertThrows(IllegalArgumentException.class, () -> user.newList("list1"));
     }
 
     @Test
-    public void testKO_listDoesntExist() {
+    public void testKO_listDoesntExist()
+    {
         User user = new User("123");
-        assertEquals(null, user.getList("list1"));
+        assertNull(user.getList("list1"));
         user.newList("testList");
         assertThrows(IllegalArgumentException.class, () -> user.renameList("list1", "newList1"));
     }

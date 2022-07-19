@@ -69,6 +69,7 @@ public class List implements Serializable
 	{
 		if(item > 0 && item <= size())
 			content.remove(item - 1);
+		else throw new IllegalArgumentException("Index value not correct");
 	}
 
 	/**
